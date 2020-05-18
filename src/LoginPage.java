@@ -18,6 +18,7 @@ import javax.swing.JTextField;
  * @author Saurav
  */
 public class LoginPage extends javax.swing.JFrame {
+String uname;
 Connection con;
 ResultSet rs;
 PreparedStatement pst;
@@ -170,6 +171,7 @@ PreparedStatement pst;
                 pst.setString(2, jPasswordField1.getText());
                 rs=pst.executeQuery();
                 if(rs.next()){
+                    uname = jTextField1.getText();
                     setVisible(false);
                     dtls.setVisible(true);
                     rs.close();
